@@ -25,4 +25,8 @@ class TopsController extends AppController
     public function index()
     {
     }
+
+    public function another()
+    {
+    }
 }

@@ -2,9 +2,12 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./webroot/js/app.js",
+    entry: {
+        app: "./webroot/js/src/app.js",
+        another: "./webroot/js/src/another.js",
+    },
     output: {
-        path: path.resolve(__dirname, "webroot/js"),
-        filename: "bundle.js",
+        path: path.resolve(__dirname, "webroot/js/public"),
+        filename: "[name].bundle.js",
     },
 };
