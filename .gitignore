@@ -1,3 +1,5 @@
 db/data/*
 app/node_modules
 bundle.js
+
+app/webroot/js/ckfinder

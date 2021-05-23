@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         app: "./webroot/js/src/app.js",
         another: "./webroot/js/src/another.js",
+        ckeditor: "./webroot/js/src/ckeditor.js",
     },
     output: {
         path: path.resolve(__dirname, "webroot/js/public"),
@@ -41,6 +42,21 @@ module.exports = {
                     {
                         loader: "css-loader",
                         options: {
+                            url: false,
+                        },
+                    },
+                ],
+            },
+            //画像
+            {
+                test: /\.(jpg?g|gif|png|svg)$/,
+                use: [
+                    "file-loader",
+                    {
+                        loader: "file-loader",
+                        options: {
+                            outputPath: "images",
+                            publicPath: "/images",
                             url: false,
                         },
                     },
