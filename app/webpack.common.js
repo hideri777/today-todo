@@ -11,6 +11,43 @@ module.exports = {
         filename: "[name].bundle.js",
         chunkFilename: "[name].js", // チャンクで分割するファイル名 entrypoint以外からのファイル名
     },
+    module: {
+        rules: [
+            {
+                // 拡張子 .js の場合
+                test: /\.js$/,
+                exclude: /node_modules/, // 除外対象 今回はnode_moduleは不要
+                use: [
+                    {
+                        // Babel を利用する
+                        loader: "babel-loader",
+                        // Babel のオプションを指定する
+                        options: {
+                            presets: [
+                                // プリセットを指定することで、ES2020 を ES5 に変換
+                                "@babel/preset-env",
+                                // React の JSX を解釈
+                                "@babel/react",
+                            ],
+                        },
+                    },
+                ],
+            },
+            //css
+            {
+                test: /\.css/,
+                use: [
+                    "style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            url: false,
+                        },
+                    },
+                ],
+            },
+        ],
+    },
     // splichunckpluginの設定 どのファイルを分割するか
     optimization: {
         splitChunks: {
