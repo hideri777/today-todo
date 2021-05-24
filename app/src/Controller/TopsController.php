@@ -29,4 +29,8 @@ class TopsController extends AppController
     public function another()
     {
     }
+
+    public function hoge()
+    {
+    }
 }

@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         app: "./webroot/js/src/app.js",
         another: "./webroot/js/src/another.js",
+        practice: "./webroot/js/src/practice.js",
         ckeditor: "./webroot/js/src/ckeditor.js",
     },
     output: {
